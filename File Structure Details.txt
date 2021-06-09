@@ -1,0 +1,10 @@
+HEADER:                     (length 10240 bytes)         (offset 0 bytes)
+little endian byte pairs for cue numbering
+
+CUES: 			    (length 2048 bytes)          (offset 10240 + CUE_INDEX * 2048 bytes)
+
+													DECIMAL OFFSET
+0 - 9: Name of cue          (length   10 bytes)		0  -  9
+B - C: Fade UP			    (length    2 bytes)		12 - 13	 		Is little endian byte order (least significant bit to most significant, left to right) integer values representing fade times. Values must be multiplied by 20, so for a 3 second fade a value of 60 would be used. Same goes for both fade directions. 	
+D - E: Fade Down    		(length    2 bytes)		14 - 15	
+14: start of channel values (length 1024 bytes)		20 -
